@@ -1,10 +1,15 @@
 // Input card font
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
 $inputFormSectionsFont: "Source Sans Pro", sans-serif;
+$cardNumberFont: "Source Code Pro", monospace;
 
+// Card holder nmae font
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+$cardHolderNameFont: 'Courier Prime', monospace;
 
 $creditCardFormHeight: 1100px;
 
 $creditCardFormWidth: 1000px;
 
 $mainBackground: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+$originalCCGradient: linear-gradient(77.35deg, #F96A6A 3.05%, rgba(255, 255, 255, 0) 96.6%), linear-gradient(180deg, #3F69FF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #C4C4C4 0%, #A300EF 100%);
