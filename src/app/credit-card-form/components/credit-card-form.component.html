@@ -8,14 +8,14 @@
 
       </div>
       <div class="credit-card-number">
-        {{creditCardNumber}}
+        {{cardNumber.value}}
       </div>
       <div class="card-holder-container">
         <p class="card-holder-text title">
           {{cardHolderTitle}}
         </p>
         <p class="card-holder-text name">
-          {{cardHolderName}}
+          {{cardHolderName.value.toUpperCase()}}
         </p>
       </div>
       <div class="expiry-date-container">
@@ -23,7 +23,7 @@
           {{expiresTitle}}
         </p>
         <p class="expiry-date-text value">
-          {{expiresMonthValue}}/{{expiresYearValue}}
+          {{expiryMonth.value}}/{{expiryYear.value}}
         </p>
       </div>
     </div>
@@ -33,7 +33,7 @@
       <p class="card-input-text">
         Card Number
       </p>
-      <input type="text" name="" value="" class="input-box" id="card-number-input-box">
+      <input type="text" name="" value="" class="input-box" id="card-number-input-box" (formControl)="cardNumber" (keyup)="updateCardNumber($event)">
     </div>
     <div class="card-holder-input-container">
       <p class="card-input-text">
@@ -46,20 +46,22 @@
         <p class="card-input-text">
           Expiry Date
         </p>
-        <select class="exp-date-select">
+        <select class="exp-date-select" name="month">
           <option value="" disabled selected hidden>Month</option>
+          <option value="" *ngFor="let month of monthOptions">{{month}}</option>
         </select>
       </div>
       <div class="year-input-container">
-        <select class="exp-date-select" name="">
+        <select class="exp-date-select" name="year" id="year-select">
           <option id="year-placeholder" value="" disabled selected hidden>Year</option>
+          <option value="" *ngFor="let year of yearOptions">{{year}}</option>
         </select>
       </div>
       <div class="cvv-input-container">
         <p class="card-input-text">
           CVV
         </p>
-        <input type="text" name="" value="" class="input-box">
+        <input type="text" name="" value="" class="input-box" id="cvv-input-box">
       </div>
     </div>
     <button class="submit-button" type="button" name="button">

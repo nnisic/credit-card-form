@@ -6,7 +6,10 @@
 .main-container {
   height: 100vh;
   width: 100vw;
-  background: $originalCCGradient;
+  // background: $originalCCGradient;
+  background-image: url(../../../assets/bg-gradient-with-white.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
 
   .credit-card-form-container {
@@ -24,7 +27,8 @@
       background-image: url(../../../assets/cc-background-cool-black.jpeg);
       z-index: 1;
       border-radius: 1em;
-      box-shadow: 0px 27px 109px -11px rgba(0,0,0,0.48);
+      box-shadow: 0px 8px 48px -1px rgba(0,0,0,.7);
+
       display: grid;
       grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
       padding: 2em;
@@ -40,10 +44,13 @@
       .credit-provider-logo {
         grid-row: 1 / 2;
         grid-column: 3 / 4;
-        background-image: url(../../../assets/visa-logo-white-1.svg);
+        background-image: url(../../../assets/mastercard-logo-white-1.svg);
         background-repeat: no-repeat;
-        height: 87.81px;
-        width: 159px;
+        // height: 87.81px;
+        // width: 159px;
+        height: 95px;
+        width: 121.68px;
+
         justify-self: end;
       }
 
@@ -58,7 +65,7 @@
         font-family: $cardNumberFont;
         word-spacing: 1rem;
         border-radius: 8px;
-        padding: .5rem .5rem .5rem .8rem;
+        padding: .3rem .5rem .5rem .8rem;
       }
 
       .card-holder-container {
@@ -66,7 +73,7 @@
         grid-column: 1 / 3;
         margin: 0;
         align-self: end;
-        padding: 1rem;
+        padding: 1rem 1rem .5rem 1rem;
 
         .card-holder-text {
           color: white;
@@ -90,7 +97,7 @@
         grid-row: 3 / 4;
         grid-column: 3 / 4;
         place-self: end;
-        padding: 1rem;
+        padding: .8rem 1rem .5rem 1rem;
 
         .expiry-date-text {
           color: white;
@@ -116,6 +123,8 @@
       grid-column: 1 / -1;
       background: white;
       border-radius: 1em;
+      box-shadow: 0px 0px 23px -1px rgba(0,0,0,.5);
+
     }
 
     .card-input-text {
@@ -129,15 +138,12 @@
     .input-box {
       margin-top: .2em;
       padding: .5em;
-      height: 5em;
+      height: 5rem;
+      max-height: 5rem;
       border: 2px solid lightgrey;
-      border-radius: .5em;
+      border-radius: .5rem;
+      font-family: $inputFormSectionsFont;
 
-      &:before {
-        height: 10px;
-        width: 10px;
-        background: black;
-      }
     }
 
     .card-number-input-container {
@@ -145,9 +151,13 @@
       grid-row: 3 / 4;
       height: 60%;
       align-self: end;
+      margin-bottom: 1rem;
 
       #card-number-input-box {
         width: 100%;
+        max-height: 5rem;
+        font-size: 2rem;
+
       }
     }
 
@@ -161,6 +171,8 @@
 
       #card-holder-input-box {
         width: 100%;
+        max-height: 5rem;
+        font-size: 2rem;
       }
     }
 
@@ -172,14 +184,20 @@
       grid-template-rows: 1fr;
 
       .exp-date-select {
-        height: 5em;
-        width: 90%;
-        margin-top: .2em;
-        padding: .5em;
+        height: 5rem;
+        width: 70%;
+        margin-top: .4rem;
+        padding: .5rem .5rem .5rem 1rem;
         border: 2px solid lightgrey;
-        border-radius: .5em;
-
+        border-radius: .5rem;
+        font-size: 1.8rem;
+        cursor: pointer;
       }
+
+      #year-select {
+        margin-top: 0;
+      }
+
 
       .month-input-container {
         grid-column: 1 / 2;
@@ -194,6 +212,12 @@
       .cvv-input-container {
         grid-column: 3 / 4;
         justify-self: end;
+
+        #cvv-input-box {
+          font-size: 2rem;
+          font-family: $inputFormSectionsFont;
+          max-width: 11.706rem;
+        }
       }
 
     }
